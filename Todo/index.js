@@ -42,6 +42,17 @@ todoList.addEventListener("click", (event) => {
   }
 });
 
+todoList.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    
+    let li = event.target
+    li.setAttribute("data-complete", "true")
+    console.log(li);
+    
+
+  }
+});
+
 
 
 
@@ -50,7 +61,7 @@ const renderList = () => {
   
   if(items){
     items.forEach((item) => {
-    list += `<li data-id=${item.id}>${item.text}<span>X</span></li>`;
+    list += `<li data-complete="false" data-id=${item.id}>${item.text}<span>X</span></li>`;
   });
   }
   
